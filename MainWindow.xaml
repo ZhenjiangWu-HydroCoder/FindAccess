@@ -1,0 +1,63 @@
+﻿<Window x:Class="FindAccess.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FindAccess"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"  WindowStyle="ThreeDBorderWindow" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="500" Width="500" Icon="Asset/关键词.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="PROJECT_NAME" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20" Margin="10">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel
+                              Orientation="Horizontal"
+                              Margin="-2 0 0 0">
+                        <TextBlock FontSize="18">
+                                选择Access数据库
+                        </TextBlock>
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <Button Grid.Column="1" Margin="10,0" Click="Choose_Click">选择</Button>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <ComboBox Name="SheetNameList" materialDesign:HintAssist.Hint="选择数据表" IsEditable="False" Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="20" Margin="10,0">
+            </ComboBox>
+        </Grid>
+        <Grid Name="buttonGrid" Grid.Row="2" Margin="20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Name="btnCancle"  Style="{StaticResource MaterialDesignRaisedLightButton}"  ToolTip="取消" Click="btnCancle_Click">
+                取消
+            </Button>
+            <Button Name="btnSure" Grid.Column="2" Style="{StaticResource MaterialDesignRaisedLightButton}"  ToolTip="单个表导出" Click="btnSure_Click">
+                导出
+            </Button>
+            <Button Name="btnallexport" Grid.Column="4" Style="{StaticResource MaterialDesignRaisedLightButton}"  ToolTip="全部表确定" Click="btnallExport_Click">
+                全部导出
+            </Button>
+            <Button Name="inport" Grid.Column="6" Style="{StaticResource MaterialDesignRaisedLightButton}"  ToolTip="" Click="inport_Click">
+                修改字段说明
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
